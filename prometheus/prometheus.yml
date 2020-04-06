@@ -11,16 +11,18 @@ rule_files:
 # A scrape configuration containing exactly one endpoint to scrape:
 
 
-# alert
+# Alerting specifies settings related to the Alertmanager
 alerting:
   alertmanagers:
     - scheme: http
       static_configs:
         - targets:
+            # Alertmanager's default port is 9093
             - "alertmanager:9093"
 
 
-# Here it's Prometheus itself.
+# A list of scrape configurations that specifies a set of
+# targets and parameters describing how to scrape them.
 scrape_configs:
 
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
