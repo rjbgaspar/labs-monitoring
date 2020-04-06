@@ -1,21 +1,23 @@
 global:
 
   #
+  # Internal SMTP allow anonymous access
+  #
+  # The smarthost and SMTP sender used for mail notifications.
+  smtp_smarthost: 'gvsrv01:25'
+  smtp_from: 'gvadmin@grupo-valco.com'
   # level=error ts=2020-04-06T10:40:31.089Z caller=notify.go:372 component=dispatcher msg="Error on notify" err="find
   # auth mechanism: unknown auth mechanism: NTLM" context_err="context deadline exceeded"
-  #
-  # # The smarthost and SMTP sender used for mail notifications.
-  # smtp_smarthost: 'gvsrv01:25'
-  # smtp_from: 'gvadmin@grupo-valco.com'
   # smtp_auth_username: 'GV\GVAdmin'
   # smtp_auth_password: 'Valco123!'
-  # smtp_require_tls: false
 
-  # mail.coimfor.pt
-  smtp_smarthost: '89.26.253.160:25'
-  smtp_from: 'site@grupo-valco.pt'
-  smtp_auth_username: 'site@grupo-valco.pt'
-  smtp_auth_password: 'Site@valco123'
+  # Using mail.coimfor.pt tested at 2020-04-06 and it's ok
+#  smtp_smarthost: '89.26.253.160:25'
+#  smtp_from: 'site@grupo-valco.pt'
+#  smtp_auth_username: 'site@grupo-valco.pt'
+#  smtp_auth_password: 'Site@valco123'
+
+
   smtp_require_tls: false
 
   slack_api_url: 'https://hooks.slack.com/services/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'
