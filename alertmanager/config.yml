@@ -24,6 +24,10 @@ global:
 
 # The root route on which each incoming alert enters.
 route:
+
+  #
+  # A default receiver
+  #
   # The root route must not have any matchers as it is the entry point for
   # all alerts. It needs to have a receiver configured so alerts that do not
   # match any of the sub-routes are sent to someone.
@@ -131,3 +135,8 @@ receivers:
 #  - name: 'team-DB-pager'
 #    pagerduty_configs:
 #      - service_key: <team-DB-key>
+
+#  - name: 'discord-webhook'
+    webhook_configs:
+      - url: 'http://172.16.2.153:9095'
+

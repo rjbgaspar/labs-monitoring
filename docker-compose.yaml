@@ -48,6 +48,21 @@ services:
 #    deploy:
 #      mode: global
 
+  # See https://hub.docker.com/r/skandyla/alertmanager-discord/
+  alertmanager-discord:
+    image: skandyla/alertmanager-discord
+    container_name: alertmanager-discord
+    environment:
+      DISCORD_WEBHOOK: ${DISCORD_WEBHOOK}
+      DISCORD_NAME: ${DISCORD_NAME}
+    ports:
+      - 9095:9095
+    networks:
+      - microservices-monitoring
+  #  restart: always
+  #    deploy:
+  #      mode: global
+
   cadvisor:
     image: google/cadvisor:latest
     container_name: cadvisor
@@ -92,6 +107,7 @@ services:
     volumes:
       - grafana_data:/var/lib/grafana
       - ./grafana/dashboards:/var/lib/grafana/dashboards
+      - ./grafana/:/etc/grafana/
       - ./grafana/provisioning:/etc/grafana/provisioning
     networks:
       - microservices-monitoring
