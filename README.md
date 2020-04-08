@@ -1,9 +1,25 @@
-### Run Prometheus via Docker
+### Run Prometheus, Alertmanager, Grafana via Docker
 
 ```
-docker run -p 9090:9090 -v <path-to-prometheus.yml>:/etc/prometheus/prometheus.yml prom/prometheus
+
 ```
 For example, in windows
 ```
-docker run -d -p 9090:9090 -v $PWD/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
+docker-compose up
 ```
+
+
+#### Grafana
+
+##### References
+
+[Github Grafana datasource for Prometheus Alertmanager](https://github.com/camptocamp/grafana-prometheus-alertmanager-datasource)
+
+Plugins provisioned
+```
+# Intalled using environment variables
+camptocamp-prometheus-alertmanager-datasource
+```
+
+
+
