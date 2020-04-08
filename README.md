@@ -40,7 +40,8 @@ camptocamp-prometheus-alertmanager-datasource
 Using environment variables in provisioned dashboard json file is not supported.<br/> 
 Replaced all instances of ${ENV_VAR_NAME} for the desired value.
 
-| Description                                                                        | Id   | File version                      | Date       | Replace                                                    |
-| ---------------------------------------------------------------------------------- | ----:| --------------------------------- | ---------- | ---------------------------------------------------------- |
-| [JVM (Micrometer)](https://grafana.com/grafana/dashboards/4701)                    | 4701 | jvm-micrometer_rev9.json          | 2020-04-08 | ${DS_PROMETHEUS} with Prometheus                           |
+| Description                                                                         | Id   | File version                      | Date       | Replace                                                    |
+| ----------------------------------------------------------------------------------- | ----:| --------------------------------- | ---------- | ---------------------------------------------------------- |
+| [JVM (Micrometer)](https://grafana.com/grafana/dashboards/4701)                     | 4701 | jvm-micrometer_rev9.json          | 2020-04-08 | ${DS_PROMETHEUS} with Prometheus                           |
 | [Prometheus AlertManager by daixiang0](https://grafana.com/grafana/dashboards/8010) | 8010 | prometheus-alertmanager_rev1.json | 2020-04-08 | ${DS_PROMETHEUS_ALERTMANAGER} with Prometheus AlertManager |
+| [Alertmanager Grafana dashboard](https://grafana.com/grafana/dashboards/9578)       | 9578 | alertmanager_rev4.json            | 2020-04-08 |                                                            | 
