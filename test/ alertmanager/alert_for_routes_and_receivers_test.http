@@ -7,6 +7,11 @@ Content-Type: application/json
     "labels": {
       "alertname": "TestAlert1"
     }
+  },
+  {
+    "labels": {
+      "alertname": "TestAlert2"
+    }
   }
 ]
 

@@ -15,10 +15,10 @@ docker-compose up
 
 [Github Grafana datasource for Prometheus Alertmanager](https://github.com/camptocamp/grafana-prometheus-alertmanager-datasource)
 
-
-[JVM (Micrometer)](https://grafana.com/grafana/dashboards/4701)
-
-
+##### Dashboards
+[JVM (Micrometer)](https://grafana.com/grafana/dashboards/4701)<br/> 
+[Prometheus AlertManagerby daixiang0](https://grafana.com/grafana/dashboards/8010/)<br/> 
+[Alertmanager Grafana dashboard](https://grafana.com/grafana/dashboards/9578)
 
 ### Environment
 Plugins provisioned
