@@ -19,11 +19,11 @@ providers:
     options:
       path: /etc/grafana/provisioning/dashboards/prometheus-alertmanager_rev1.json
 
-  - name: 'Alertmanager'
-    orgId: 1
-    folder: ''
-    type: file
-    disableDeletion: false
-    editable: true
-    options:
-      path: /etc/grafana/provisioning/dashboards/alertmanager_rev4.json
+#  - name: 'Alertmanager'
+#    orgId: 1
+#    folder: ''
+#    type: file
+#    disableDeletion: false
+#    editable: true
+#    options:
+#      path: /etc/grafana/provisioning/dashboards/alertmanager_rev4.json
