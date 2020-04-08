@@ -98,7 +98,10 @@ services:
       - microservices-monitoring
 
   grafana:
-    image: grafana/grafana:master
+    # Compatibility issues with camptocamp-prometheus-alertmanager-datasource
+    # Wait for the merge of PR fix issue regarding grafana 6.7 / cleanup datasource request
+    image: grafana/grafana:6.6.2
+#    image: grafana/grafana:master
     depends_on:
       - prometheus
     container_name: grafana
