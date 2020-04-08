@@ -8,3 +8,10 @@ datasources:
     type: prometheus
     access: proxy
     url: http://prometheus:9090
+
+  - name: Prometheus AlertManager
+    type: camptocamp-prometheus-alertmanager-datasource
+    access: proxy
+    url: http://alertmanager:9093
+
+

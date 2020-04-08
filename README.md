@@ -26,7 +26,7 @@ camptocamp-prometheus-alertmanager-datasource
 
 Data Sources
 
-```
-# Prometheus as proxy
-prometheus
-```
+| Description             | Type                                          | Access |
+| ----------------------- | --------------------------------------------- | ------ |
+| Prometheus              | prometheus                                    | proxy  |
+| Prometheus AlertManager | camptocamp-prometheus-alertmanager-datasource | proxy  |
