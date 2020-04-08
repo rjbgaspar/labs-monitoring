@@ -138,5 +138,5 @@ receivers:
 
 #  - name: 'discord-webhook'
     webhook_configs:
-      - url: 'http://172.16.2.153:9095'
+      - url: 'http://alertmanager-discord:9095'
 

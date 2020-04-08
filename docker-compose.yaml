@@ -102,6 +102,8 @@ services:
     depends_on:
       - prometheus
     container_name: grafana
+    environment:
+      GF_INSTALL_PLUGINS: ${GF_INSTALL_PLUGINS}
     ports:
       - 3000:3000
     volumes:

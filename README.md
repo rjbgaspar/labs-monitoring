@@ -9,11 +9,14 @@ docker-compose up
 ```
 
 
-#### Grafana
+### Grafana
 
-##### References
+#### References
 
 [Github Grafana datasource for Prometheus Alertmanager](https://github.com/camptocamp/grafana-prometheus-alertmanager-datasource)
+
+
+#### Environment
 
 Plugins provisioned
 ```
@@ -21,5 +24,9 @@ Plugins provisioned
 camptocamp-prometheus-alertmanager-datasource
 ```
 
+Data Sources
 
-
+```
+# Prometheus as proxy
+prometheus
+```
