@@ -8,6 +8,15 @@ volumes:
   grafana_data: {}
 
 services:
+  fluentd:
+    build: ./fluentd
+    volumes:
+      - ./fluentd/conf:/fluentd/etc
+#      - fluentd_log:/log:rw
+    ports:
+      - "24224:24224"
+      - "24224:24224/udp"
+
   prometheus:
     image: prom/prometheus:latest
     depends_on:
