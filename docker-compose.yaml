@@ -1,7 +1,8 @@
 version: "3.2"
 
 networks:
-  microservices-monitoring:
+  front-tier:
+  back-tier:
 
 volumes:
   prometheus_data: {}
@@ -17,7 +18,7 @@ services:
       - "24224:24224"
       - "24224:24224/udp"
     networks:
-      - microservices-monitoring
+      - back-tier
 
   prometheus:
     image: prom/prometheus:latest
@@ -38,7 +39,27 @@ services:
       - --web.console.templates=/usr/share/prometheus/consoles
       - --web.enable-lifecycle
     networks:
-      - microservices-monitoring
+      - back-tier
+#    restart: always
+#    deploy:
+#      mode: global
+
+  #  is similar to cAdvisor , but collects the metrics of hardware and OS from the host machines itself.
+  node-exporter:
+    image: prom/node-exporter
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.sysfs=/host/sys'
+      - --collector.filesystem.ignored-mount-points
+      - "^/(sys|proc|dev|host|etc|rootfs/var/lib/docker/containers|rootfs/var/lib/docker/overlay2|rootfs/run/docker/netns|rootfs/var/lib/docker/aufs)($$|/)"
+    ports:
+      - 9100:9100
+    networks:
+      - back-tier
 #    restart: always
 #    deploy:
 #      mode: global
@@ -54,7 +75,7 @@ services:
       - --config.file=/etc/alertmanager/config.yml
       - --storage.path=/alertmanager
     networks:
-      - microservices-monitoring
+      - back-tier
 #  restart: always
 #    deploy:
 #      mode: global
@@ -69,11 +90,14 @@ services:
     ports:
       - 9095:9095
     networks:
-      - microservices-monitoring
+      - back-tier
   #  restart: always
   #    deploy:
   #      mode: global
 
+  # cAdvisor is a daemon and monitoring tool which collects and aggregates the resource usage data from containers.
+  # But it does not have its own DB to present a time-series information on the resource utilization.
+  # This is where prometheus comes in picture.
   cadvisor:
     image: google/cadvisor:latest
     container_name: cadvisor
@@ -85,7 +109,7 @@ services:
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
     networks:
-      - microservices-monitoring
+      - back-tier
 #  restart: always
 #    deploy:
 #      mode: global
@@ -97,7 +121,7 @@ services:
       - 3100:3100
     command: -config.file=/etc/loki/local-config.yaml
     networks:
-      - microservices-monitoring
+      - back-tier
 
   promtail:
     image: grafana/promtail:latest
@@ -106,7 +130,7 @@ services:
       - /var/log:/var/log
     command: -config.file=/etc/promtail/docker-config.yaml
     networks:
-      - microservices-monitoring
+      - back-tier
 
   grafana:
     # Compatibility issues with camptocamp-prometheus-alertmanager-datasource
@@ -126,4 +150,5 @@ services:
       - ./grafana/:/etc/grafana/
       - ./grafana/provisioning:/etc/grafana/provisioning
     networks:
-      - microservices-monitoring
+      - back-tier
+      - front-tier
