@@ -29,4 +29,13 @@ Content-Type: application/json
   ]
 }
 
+
+###
+
+# curl -XPOST -u loki:PassWord  -H "Content-Type: application/json" --data-binary "@./test.json"  https://loki.example.com/loki/api/v1/push
+
+###
+
+
+
 ###

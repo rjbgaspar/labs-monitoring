@@ -16,6 +16,8 @@ services:
     ports:
       - "24224:24224"
       - "24224:24224/udp"
+    networks:
+      - microservices-monitoring
 
   prometheus:
     image: prom/prometheus:latest
