@@ -1,0 +1,32 @@
+
+
+
+### Microservices Mode
+
+
+# GET /ready
+GET localhost:3100/ready
+###
+# GET /metrics
+GET localhost:3100/metrics
+###
+
+
+
+POST localhost:3100/loki/api/v1/push
+Content-Type: application/json
+
+{
+  "streams":
+  [
+    {
+      "stream": { "foo": "bar2" },
+      "values":
+      [
+        [ "1586818238000000000", "fizzbuzz" ]
+      ]
+    }
+  ]
+}
+
+###
