@@ -1,6 +1,24 @@
 apiVersion: 1
 
 providers:
+  - name: 'Node Exporter Server Metrics'
+    orgId: 1
+    folder: ''
+    type: file
+    disableDeletion: false
+    editable: true
+    options:
+      path: /etc/grafana/provisioning/dashboards/node-exporter-server-metrics_rev8.json
+
+  - name: 'Node Exporter Full'
+    orgId: 1
+    folder: ''
+    type: file
+    disableDeletion: false
+    editable: true
+    options:
+      path: /etc/grafana/provisioning/dashboards/node-exporter-full_rev16.json
+
   - name: 'JVM (Micrometer)'
     orgId: 1
     folder: ''
