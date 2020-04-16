@@ -1,4 +1,4 @@
-### Run Prometheus, Alertmanager, Grafana, cAdvisor, node-exporter, Fluentd, loki, via Docker
+### Run Prometheus, Alertmanager, promtail, Grafana, cAdvisor, node-exporter, Fluentd, loki, via Docker
 
 ```
 
@@ -12,8 +12,10 @@ docker-compose up
 ## Grafana
 
 ### References
-
+[Prometheus](https://prometheus.io/)
+[Alertmanager | Prometheus](https://prometheus.io/docs/alerting/alertmanager/)
 [Github Grafana datasource for Prometheus Alertmanager](https://github.com/camptocamp/grafana-prometheus-alertmanager-datasource)
+[fluentd](https://www.fluentd.org/)
 
 ##### Dashboards
 [JVM (Micrometer)](https://grafana.com/grafana/dashboards/4701)<br/> 
