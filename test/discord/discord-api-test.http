@@ -1,0 +1,7 @@
+POST {{discord_webhook}}
+Content-Type: application/json
+
+{
+  "content" : "Houston, this is a message for Discord"
+}
+###

@@ -28,6 +28,7 @@ dependency-reduced-pom.xml
 *.ipr
 *.iws
 *.idea
+http-client.private.env.json
 
 # NPM dependencies files
 node_modules

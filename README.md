@@ -1,4 +1,4 @@
-### Run Prometheus, Alertmanager, Grafana via Docker
+### Run Prometheus, Alertmanager, Grafana, cAdvisor, node-exporter, Fluentd, loki, via Docker
 
 ```
 
