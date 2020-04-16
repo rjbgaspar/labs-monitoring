@@ -34,3 +34,4 @@ node_modules
 
 README.html
 fluentd/fluent.conf
+.env
